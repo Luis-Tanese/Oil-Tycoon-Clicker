@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oil Tycoon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="clicker">
+            <h1>Oil Tycoon</h1>
+            <div class="score">Barris de Petróleo: <span id="score">0</span></div>
+            <div class="ops-opc">
+                <div>Barris por clique: <span id="opc">1</span></div>
+                <div>Barris por segundo (passivo): <span id="ops">0</span></div>
+            </div>
+            <button id="clickButton">Extrair Petróleo!</button>
+            <div class="cps">Cliques por segundo: <span id="cps">0</span></div>
+        </div>
+        <div class="upgrades-container">
+            <div class="upgrades-column">
+                <h2>Upgrades de Clique</h2>
+                <ul id="clickUpgradesList"></ul>
+            </div>
+            <div class="upgrades-column">
+                <h2>Upgrades Passivos</h2>
+                <ul id="passiveUpgradesList"></ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy Tanese</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
