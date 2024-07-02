@@ -11,7 +11,7 @@ let mainUpgradeDiscountCost = 1;
 let gemChance = 0.1;
 
 let lastClickTime = new Date().getTime();
-let clickInterval = 1000 / 30;
+let clickInterval = 1000 / 45;
 
 const oilBarrelsDisplay = document.getElementById('oil-barrels');
 const gemsDisplay = document.getElementById('gems');
