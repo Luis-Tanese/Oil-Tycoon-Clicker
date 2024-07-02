@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +7,52 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="game-container">
-        <div class="clicker">
-            <h1>Oil Tycoon</h1>
-            <div class="score">Barris de Petróleo: <span id="score">0</span></div>
-            <div class="ops-opc">
-                <div>Barris por clique: <span id="opc">1</span></div>
-                <div>Barris por segundo (passivo): <span id="ops">0</span></div>
+    <div class="container">
+        <div id="info-tooltip">
+            <span id="info-icon">?</span>
+            <div id="info-content">
+                <h2>Game Mechanics</h2>
+                <ul>
+                    <li><strong>Clicking:</strong> Click to earn Oil Barrels.</li>
+                    <li><strong>Gems:</strong> Secondary currency obtained with a chance on each click.</li>
+                    <li><strong>Upgrades:</strong>
+                        <ul>
+                            <li>Clicking Power Upgrades: Increase Oil Barrels per click.</li>
+                            <li>Passive Income Upgrades: Increase Oil Barrels per second.</li>
+                            <li>Gem Boosts: Enhance clicking power, passive income, and gem chances.</li>
+                            <li>Main Upgrade Discount: Reduces the cost of main currency upgrades.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Cost Increase:</strong> Upgrades become 1.3 times more expensive with each purchase.</li>
+                </ul>
             </div>
-            <button id="clickButton">Extrair Petróleo!</button>
-            <div class="cps">Cliques por segundo: <span id="cps">0</span></div>
         </div>
+        <h1>Oil Tycoon</h1>
+        <div class="stats">
+            <p>Oil Barrels: <span id="oil-barrels">0</span></p>
+            <p>Gems: <span id="gems">0</span></p>
+            <p>Passive Income: <span id="passive-income">0</span> Oil Barrels/s</p>
+            <p>Clicking Power: <span id="clicking-power">1</span> Oil Barrels/click</p>
+        </div>
+        <button id="clicker" onclick="clickOil()">Drill for Oil</button>
         <div class="upgrades-container">
-            <div class="upgrades-column">
-                <h2>Upgrades de Clique</h2>
-                <ul id="clickUpgradesList"></ul>
+            <div class="upgrades">
+                <h2>Drilling Power Upgrades</h2>
+                <button id="clicking-power-upgrade" onclick="buyClickingPowerUpgrade()">Buy New Drill Bit (Cost: <span id="clicking-power-cost">1</span> Oil Barrel)</button>
+                <div id="additional-click-upgrades"></div>
             </div>
-            <div class="upgrades-column">
-                <h2>Upgrades Passivos</h2>
-                <ul id="passiveUpgradesList"></ul>
+            <div class="upgrades">
+                <h2>Passive Income Upgrades</h2>
+                <button id="passive-income-upgrade" onclick="buyPassiveIncomeUpgrade()">Buy Oil Rig (Cost: <span id="passive-income-cost">10</span> Oil Barrels)</button>
+                <div id="additional-passive-upgrades"></div>
             </div>
+        </div>
+        <div class="gem-boosts">
+            <h2>Gem Boosts</h2>
+            <button id="click-power-boost" onclick="buyClickPowerBoost()">Buy Enhanced Drill Bit (Cost: <span id="click-power-boost-cost">1</span> Gems)</button>
+            <button id="passive-boost" onclick="buyPassiveBoost()">Buy Advanced Oil Rig (Cost: <span id="passive-boost-cost">1</span> Gems)</button>
+            <button id="gem-chance-boost" onclick="buyGemChanceBoost()">Buy Gem Detection Equipment (Cost: <span id="gem-chance-boost-cost">1</span> Gems)</button>
+            <button id="main-upgrade-discount" onclick="buyMainUpgradeDiscount()">Buy Supplier Discount (Cost: <span id="main-upgrade-discount-cost">1</span> Gems)</button>
         </div>
     </div>
     <footer>
