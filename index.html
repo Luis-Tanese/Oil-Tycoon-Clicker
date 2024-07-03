@@ -3,35 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oil Tycoon</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="game-container">
-        <div class="clicker">
-            <h1>Oil Tycoon</h1>
-            <div class="score">Barris de Petróleo: <span id="score">0</span></div>
-            <div class="ops-opc">
-                <div>Barris por clique: <span id="opc">1</span></div>
-                <div>Barris por segundo (passivo): <span id="ops">0</span></div>
+    <div class="container">
+        <div id="info">
+            <span id="info-icone">?</span>
+            <div id="info-conteudo">
+                <h2>Mecânicas do jogo</h2>
+                <ul>
+                    <li><strong>Cliques: </strong>Clique no botão para conseguir barris de óleo</li>
+                    <li><strong>Gemas: </strong>A cada clique, você tem a chance de conseguir uma gema</li>
+                    <li>
+                        <h2>Upgrades</h2>
+                        <ul>
+                            <li><strong>Upgrades de clique: </strong>Aumenta os barris de óleo por clique</li>
+                            <li><strong>Upgrades passivos: </strong>Aumenta o tanto de barris que você ganha por segundo</li>
+                            <li><strong>Boosts de gemas: </strong> Melhora os poderes de clique, ganhos passivos, chances de gemas e descontos para a loja principal</li>
+                        </ul>
+                    </li>
+                    <li><strong>Aumento de custos: </strong> Upgrades ficam 1.3x mais caros com cada compra</li>
+                </ul>
             </div>
-            <button id="clickButton">Extrair Petróleo!</button>
-            <div class="cps">Cliques por segundo: <span id="cps">0</span></div>
+        </div>
+        <div class="jogo">
+            <h1>Tycoon de Óleo</h1>
+            <div class="status">
+                <p>Barris de Óleo: <span id="barris">0</span></p>
+                <p>Gemas: <span id="gemas">0</span></p>
+                <p>Barris por Segundo: <span id="oleo-passivo">0</span></p>
+                <p>Barris por Clique: <span id="oleo-clique">1</span></p>
+                <ul>
+                    <li>Boost de Cliques: <span id="clique-boost-display">0</span>%</li>
+                    <li>Boost Passivo: <span id="passivo-boost-display">0</span>%</li>
+                    <li>Boost de Gemas: <span id="gemas-boost-display">0</span>%</li>
+                </ul>
+            </div>
+            <button id="cliquer" onclick=""></button>
         </div>
         <div class="upgrades-container">
-            <div class="upgrades-column">
+            <div class="upgrades">
                 <h2>Upgrades de Clique</h2>
-                <ul id="clickUpgradesList"></ul>
+                <div id="upgrades-clique"></div>
             </div>
-            <div class="upgrades-column">
+            <div class="upgrades">
                 <h2>Upgrades Passivos</h2>
-                <ul id="passiveUpgradesList"></ul>
+                <div id="upgrades-passivos"></div>
             </div>
         </div>
+        <div class="gemas-boost">
+            <h2>Boosts de Gemas</h2>
+            <div id="boosts-gemas"></div>
+        </div>
     </div>
-    <footer>
-        <p>&copy Tanese</p>
-    </footer>
     <script src="script.js"></script>
 </body>
 </html>
